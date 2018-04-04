@@ -47,7 +47,7 @@ $PAGE->navbar->add(get_string('edituploadjobs', 'block_opencast'), $baseurl);
 $coursecontext = context_course::instance($courseid);
 require_capability('block/opencast:addvideo', $coursecontext);
 
-$block = $DB->get_record('block_instances', array('parentcontextid' => $coursecontext->id));
+$block = $DB->get_record('block_instances', array('parentcontextid' => $coursecontext->id, 'blockname' => 'opencast'));
 $blockcontext = context_block::instance($block->id);
 $PAGE->set_context($blockcontext);
 
